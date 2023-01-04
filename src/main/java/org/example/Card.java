@@ -23,6 +23,13 @@ public class Card {
         }
     }
 
+    public String getRank() {
+        return this.rank;
+    }
+
+    public String getSuti() {
+        return this.suit;
+    }
     public int getValue() {
         return value;
     }

@@ -25,13 +25,24 @@ public class Main {
 //        hand.addCard(shoe.getRandomCard());
 //        System.out.println(hand);
 
-        Shoe shoe = new Shoe(1);
-        Dealer dealer = new Dealer();
-        dealer.addCard(shoe.getRandomCard());
-        dealer.addCard(shoe.getRandomCard());
-        dealer.setDealersTurnOff();
-        System.out.println("before dealers turn: " + dealer);
-        dealer.setDealersTurnOn();
-        System.out.println("after dealers turn: " + dealer);
+//        Shoe shoe = new Shoe(1);
+//        Dealer dealer = new Dealer();
+//        dealer.addCard(shoe.getRandomCard());
+//        dealer.addCard(shoe.getRandomCard());
+//        dealer.setDealersTurnOff();
+//        System.out.println("before dealers turn: " + dealer);
+//        dealer.setDealersTurnOn();
+//        System.out.println("after dealers turn: " + dealer);
+
+        int decks = 1;
+        Card card;
+        Shoe shoe = new Shoe(decks);
+        System.out.println("Cards in shoe with " + decks + " decks: " + shoe.size());
+        for(int i = 0; i < shoe.size(); ) {
+            card = shoe.getRandomCard();
+            System.out.println("rank and suit: " + card + " - value: " + card.getValue() + ", running count: " + shoe.getRunningCount() + ", shoe size: " + shoe.size() + ", approximage deck size: " + shoe.getApproximateDeckSize() + ", true count: " + shoe.getTrueCount());
+        }
+        System.out.println("Cards left in shoe: " + shoe.size() + ", running count: " + shoe.getRunningCount());
+        System.out.println("Max count: " + shoe.getMaxRunningCount() + ", min count: " + shoe.getMinRunningCount() + ", true max count: " + shoe.getMaxTrueCount() + ", true min count: " + shoe.getMinTrueCount());
     }
 }
