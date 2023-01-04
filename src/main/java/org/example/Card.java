@@ -6,9 +6,25 @@ public class Card {
 
     private String suit;
 
+    private int value;
+
     public Card(String rank, String suit) {
         this.rank = rank;
         this.suit = suit;
+
+        if (rank.equals("2") || rank.equals("3") || rank.equals("4") || rank.equals("5") || rank.equals("6")) {
+            value = 1;
+        }
+        else if (rank.equals("7") || rank.equals("8") || rank.equals("9")) {
+            value = 0;
+        }
+        else {
+            value = -1;
+        }
+    }
+
+    public int getValue() {
+        return value;
     }
 
     public String toString() {
