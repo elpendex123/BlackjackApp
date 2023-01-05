@@ -35,8 +35,7 @@ public class Hand {
     public String toString() {
         if (cards.size() == 2) {
             return "Starting hand: " + cards.get(0) + " - " + cards.get(1);
-        }
-        else {
+        } else {
             return "Have not dealt two cards yet";
         }
     }
