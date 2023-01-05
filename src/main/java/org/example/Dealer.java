@@ -23,20 +23,25 @@ public class Dealer {
         dealersTurn = false;
     }
 
+    public Hand getHand() {
+        return hand;
+    }
+
+    public void setDealersFirstTwoCards() {
+        firstTwoCards.addCard(hand.getFirstCard());
+        firstTwoCards.addCard(hand.getSecondCard());
+    }
+
     public String toString() {
         if (hand.numberOfCards() == 0) {
             return "Dealer doesn't have cards yet";
-        }
-        else if (hand.numberOfCards() == 1) {
+        } else if (hand.numberOfCards() == 1) {
             return "hidden: x, exposed: no card yet";
-        }
-        else if (hand.numberOfCards() == 2 && !dealersTurn) {
+        } else if (hand.numberOfCards() == 2 && !dealersTurn) {
             return "hidden: x, exposed: " + hand.getSecondCard();
-        }
-        else if (hand.numberOfCards() == 2 && dealersTurn) {
+        } else if (hand.numberOfCards() == 2 && dealersTurn) {
             return "hidden: " + hand.getFirstCard() + ", exposed: " + hand.getSecondCard();
-        }
-        else {
+        } else {
             return hand.toString();
         }
     }
